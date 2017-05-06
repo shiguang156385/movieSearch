@@ -1,0 +1,37 @@
+<div class="detail">
+    <h1>{{details.original_title}}</h1>
+    <div class="dt-info">
+        <div class="dti-i"><img src="{{details.images.large}}" alt=""></div>
+        <div class="dti-w">
+            <p>
+                <strong>导演：</strong>
+                <span ng-repeat="director in details.directors track by $index">{{director.name}}</span>
+            </p>
+            <p>
+                <strong>主演：</strong>
+                <span ng-repeat="cast in details.casts track by $index">{{cast.name}}{{ $last? '' : '、'}}</span>
+            </p>
+            <p><strong>类型：</strong><span ng-repeat="item in details.genres track by $index">{{item}}{{$last?'':'、'}}</span></p>
+            <p><strong>国家：</strong><sapn ng-repeat="item in details.countries track by $index">{{item}}</sapn></p>
+            <p><strong>评分：</strong>{{details.rating.average}}</p>
+            <p><strong>时间：</strong>{{details.year}}</p>
+            <p><strong>又名：</strong>{{details.title}}</p>
+        </div>
+    </div>
+    <h3>剧情简介:</h3>
+    <p style="color:#676767">{{details.summary}}</p>
+
+</div>
+<!-- 放置loading 条 -->
+<div class="loading-box"  ng-show="isLoading" >
+    <div id="fountainG">
+        <div id="fountainG_1" class="fountainG"></div>
+        <div id="fountainG_2" class="fountainG"></div>
+        <div id="fountainG_3" class="fountainG"></div>
+        <div id="fountainG_4" class="fountainG"></div>
+        <div id="fountainG_5" class="fountainG"></div>
+        <div id="fountainG_6" class="fountainG"></div>
+        <div id="fountainG_7" class="fountainG"></div>
+        <div id="fountainG_8" class="fountainG"></div>
+    </div>
+</div>

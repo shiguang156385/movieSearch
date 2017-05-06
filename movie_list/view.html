@@ -1,0 +1,33 @@
+<div class="list">
+    <ul>
+        <li ng-repeat="item in list.subjects">
+            <a href="#/movie/details/{{item.id}}">
+                <img ng-src="{{item.images.large}}" alt="">
+            </a>
+            <div class="meta">
+                <h4><span>{{item.title}}</span> <em>{{item.rating.average}}分</em></h4>
+                <div class="otherinfo">类型:<span ng-repeat="genre in item.genres">{{genre}}</span></div>
+            </div>
+        </li>
+
+    </ul>
+    <div class="paging">
+        <label>总共：{{total}}条记录,第{{page}}/{{totalPage}}页;</label>
+        <!-- 加上disable类样式，表示按钮禁用状态 -->
+        <button ng-click="goPage(page-1)" ng-class="{'disable': page<=1}" class="prev ">上一页</button>
+        <button ng-click="goPage(page+1)" ng-class="{'disable':page>=totalPage}" class="next">下一页</button>
+    </div>
+    <!-- loading条-->
+    <div class="loading-box"  ng-show="isLoading" >
+        <div id="fountainG">
+            <div id="fountainG_1" class="fountainG"></div>
+            <div id="fountainG_2" class="fountainG"></div>
+            <div id="fountainG_3" class="fountainG"></div>
+            <div id="fountainG_4" class="fountainG"></div>
+            <div id="fountainG_5" class="fountainG"></div>
+            <div id="fountainG_6" class="fountainG"></div>
+            <div id="fountainG_7" class="fountainG"></div>
+            <div id="fountainG_8" class="fountainG"></div>
+        </div>
+    </div>
+</div>
